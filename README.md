@@ -37,7 +37,7 @@ THEN I get a reasonable statistical spread of results, rather than a clump of hi
 
 
 ## Graphic
-![Project Image 0](assets/images/dbags_Main_ScreenShot.jpg)
+![Project Image 0](assets/images/dBags_Main_ScreenShot.jpg)
 
 ## Table of Contents
 * [Technologies](#Technologies)
