@@ -80,6 +80,7 @@ Done for Now
 
 ## FAQ
 > Why not a simple pseudorandom number generator?\
+
 For me, d20s consistently roll a 1 or a 20 about every 1 in 5 rolls. Some nights,
 it's about every 1 in 3 rolls. It sucks to be my players, let me tell you.
 As such, I tend to prefer statistical results to actual ones. Pseudorandom 
