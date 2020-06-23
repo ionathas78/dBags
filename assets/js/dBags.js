@@ -54,6 +54,11 @@ function handleClickRoll(event) {
     let diceMod = null;
     let numberOfDice = 1;
     const results = [];
+    const props = {
+        total: 0,
+        high: null,
+        low: null
+    }
 
     switch (targetId) {
         case "roll-d4":
@@ -96,96 +101,131 @@ function handleClickRoll(event) {
     if (!diceInput) {
         console.error("Invalid event:", event);
     }
-
-    addDice(diceInput, diceFunction, results);
+    if (diceInput.value > 0) {
+        numberOfDice = diceInput.value;
+    }
+    addDice(numberOfDice, diceFunction, results);
 
     _divReport.innerHTML = targetDie + (diceInput.value < 2 ? "" : "s") + ": " + results.join(", ");
-    _divSummary.innerHTML = summaryTag(targetDie, diceMod.value, diceInput.value) + summarizeDice(results, diceMod);
+    _divSummary.innerHTML = summaryTag(targetDie, diceMod.value, diceInput.value) + summarizeDice(results, diceMod, props);
 }
 
 function handleClickRollAll() {
     let report = "";
     let summary = "";
+    const props = {
+        total: 0,
+        high: null,
+        low: null
+    }
 
     const d4Results = [];
-    if (addDice(_inpD4, _dice.d4, d4Results)) {
+    if (addDice(_inpD4.value, _dice.d4, d4Results)) {
         let dieType = "d4";
         let tag = summaryTag(dieType, _inpModD4.value, _inpD4.value);
-        report += dieType + (_inpD4.value < 2 ? "" : "s") + ": " + d4Results.join(", ") + "<br>";
-        summary += tag + summarizeDice(d4Results, _inpModD4) + "<br>";
+        if (report != "") report += "<br>";
+        if (summary != "") summary += "<br>";
+        report += dieType + (_inpD4.value < 2 ? "" : "s") + ": " + d4Results.join(", ");
+        summary += tag + summarizeDice(d4Results, _inpModD4, props);
     }
 
     const d6Results = [];
-    if (addDice(_inpD6, _dice.d6, d6Results)) {
+    if (addDice(_inpD6.value, _dice.d6, d6Results)) {
         let dieType = "d6";
         let tag = summaryTag(dieType, _inpModD6.value, _inpD6.value);
-        report += dieType + (_inpD6.value < 2 ? "" : "s") + ": " + d6Results.join(", ") + "<br>";
-        summary += tag + summarizeDice(d6Results, _inpModD6) + "<br>";
+        if (report != "") report += "<br>";
+        if (summary != "") summary += "<br>";
+        report += dieType + (_inpD6.value < 2 ? "" : "s") + ": " + d6Results.join(", ");
+        summary += tag + summarizeDice(d6Results, _inpModD6, props);
     }
     const d8Results = [];
-    if (addDice(_inpD8, _dice.d8, d8Results)) {
+    if (addDice(_inpD8.value, _dice.d8, d8Results)) {
         let dieType = "d8";
         let tag = summaryTag(dieType, _inpModD8.value, _inpD8.value);
-        report += dieType + (_inpD8.value < 2 ? "" : "s") + ": " + d8Results.join(", ") + "<br>";
-        summary += tag + summarizeDice(d8Results, _inpModD8) + "<br>";
+        if (report != "") report += "<br>";
+        if (summary != "") summary += "<br>";
+        report += dieType + (_inpD8.value < 2 ? "" : "s") + ": " + d8Results.join(", ");
+        summary += tag + summarizeDice(d8Results, _inpModD8, props);
     }
     const d10Results = [];
-    if (addDice(_inpD10, _dice.d10, d10Results)) {
+    if (addDice(_inpD10.value, _dice.d10, d10Results)) {
         let dieType = "d10";
         let tag = summaryTag(dieType, _inpModD10.value, _inpD10.value);
-        report += dieType + (_inpD10.value < 2 ? "" : "s") + ": " + d10Results.join(", ") + "<br>";
-        summary += tag + summarizeDice(d10Results, _inpModD10) + "<br>";
+        if (report != "") report += "<br>";
+        if (summary != "") summary += "<br>";
+        report += dieType + (_inpD10.value < 2 ? "" : "s") + ": " + d10Results.join(", ");
+        summary += tag + summarizeDice(d10Results, _inpModD10, props);
     }
     const d12Results = [];
-    if (addDice(_inpD12, _dice.d12, d12Results)) {
+    if (addDice(_inpD12.value, _dice.d12, d12Results)) {
         let dieType = "d12";
         let tag = summaryTag(dieType, _inpModD12.value, _inpD12.value);
-        report += dieType + (_inpD12.value < 2 ? "" : "s") + ": " + d12Results.join(", ") + "<br>";
-        summary += tag + summarizeDice(d12Results, _inpModD12) + "<br>";
+        if (report != "") report += "<br>";
+        if (summary != "") summary += "<br>";
+        report += dieType + (_inpD12.value < 2 ? "" : "s") + ": " + d12Results.join(", ");
+        summary += tag + summarizeDice(d12Results, _inpModD12, props);
     }
     const d20Results = [];
-    if (addDice(_inpD20, _dice.d20, d20Results)) {
+    if (addDice(_inpD20.value, _dice.d20, d20Results)) {
         let dieType = "d20";
         let tag = summaryTag(dieType, _inpModD20.value, _inpD20.value);
-        report += dieType + (_inpD20.value < 2 ? "" : "s") + ": " + d20Results.join(", ") + "<br>";
-        summary += tag + summarizeDice(d20Results, _inpModD20) + "<br>";
+        if (report != "") report += "<br>";
+        if (summary != "") summary += "<br>";
+        report += dieType + (_inpD20.value < 2 ? "" : "s") + ": " + d20Results.join(", ");
+        summary += tag + summarizeDice(d20Results, _inpModD20, props);
     }
     const d100Results = [];
-    if (addDice(_inpD100, _dice.d100, d100Results)) {
+    if (addDice(_inpD100.value, _dice.d100, d100Results)) {
         let dieType = "d%";
         let tag = summaryTag(dieType, _inpModD100.value, _inpD100.value);
-        report += dieType + (_inpD100.value < 2 ? "" : "s") + ": " + d100Results.join(", ") + "<br>";
-        summary += tag + summarizeDice(d100Results, _inpModD100) + "<br>";
+        if (report != "") report += "<br>";
+        if (summary != "") summary += "<br>";
+        report += dieType + (_inpD100.value < 2 ? "" : "s") + ": " + d100Results.join(", ");
+        summary += tag + summarizeDice(d100Results, _inpModD100, props);
     }
 
     if (report != "") {
+        if (summary.indexOf("<br>") > -1) {
+            summary += "<hr>" + "Total: " + props.total + ". " + (!props.high ? "" : "High: " + props.high + ". Low: " + props.low + ".");
+        }
         _divReport.innerHTML = report;
         _divSummary.innerHTML = summary;
+    } else {
+        _divReport.innerHTML = "";
+        _divSummary.innerHTML = "";
     }
 }
 
-function addDice(inp, func, arr) {
+function addDice(toRoll, func, arr) {
     let returnValue = false;
-    let numberOfDice = parseInt(inp.value);
-    if (!numberOfDice || numberOfDice < 1) {
-        numberOfDice = 1;
+    let numberOfDice = parseInt(toRoll);
+    if (numberOfDice > 0) {
+        returnValue = true;
+        arr.push(...func(numberOfDice));
     }
-    returnValue = true;
-    arr.push(...func(numberOfDice));
 
     return returnValue;
 }
 
-function summarizeDice(arr, inp) {
+function summarizeDice(arr, inp, runningProps) {
+    let modValue = parseInt((!inp.value ? 0 : inp.value));
     let total = 0;
     let high = 0;
     let low = 0;
     let modified = 0;
 
     total = arr.reduce((a, b) => a + b);
-    high = arr.reduce((a, b) => (a > b ? a : b));
-    low = arr.reduce((a, b) => (a < b ? a : b));
-    modified = parseInt(total) + parseInt((!inp.value ? 0 : inp.value));
+    high = arr.reduce((a, b) => (a > b ? a : b)) + modValue;
+    low = arr.reduce((a, b) => (a < b ? a : b)) + modValue;
+    modified = parseInt(total) + modValue;
+
+    runningProps.total += modified;
+    if (!runningProps.high || high > runningProps.high) {
+        runningProps.high = high;
+    }
+    if (!runningProps.low || low < runningProps.low) {
+        runningProps.low = low;
+    }
 
     return "Total: " + modified + ". " + (arr.length == 1 ? "" : "High: " + high + ". Low: " + low + ".");
 }
