@@ -1,0 +1,44 @@
+body {
+    font-size: 1em;
+    display: block;
+}
+
+input {
+    background-color: transparent;
+    width: 80%;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+.short-row {
+    display: flex;
+    height: 1.5em;
+    width: 33%;
+}
+
+.short-row:nth-of-type(2),
+.short-row:nth-of-type(4),
+.short-row:nth-of-type(6),
+.short-row:nth-of-type(8) {
+    background-color: lightgrey;
+    font-weight: 200;
+}
+
+.col4 {
+    width: 23%;
+}
+
+.col2 {
+    width: 50%;
+}
+
+.report-block {
+    border: 1px solid black;
+    width: 80%;
+    height: 10em;
+    margin-top: 5px;
+    overflow: auto;
+}

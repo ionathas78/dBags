@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/dBags.css" type="text/CSS"/>
+    <title>dBags</title>
+</head>
+<body>
+    <div class="short-row">
+        <div class="col4">
+            <label for="d4-dice">d4s</label>
+        </div>
+        <div class="col4">
+            <input id="d4-dice" type="number" min="0" max = "100" />
+        </div>
+        <div class="col4">
+            <button id="roll-d4">Roll</button>
+        </div>      
+        <div class="col4">
+            <input id="d4-mod" type="number" placeholder="+/-0" />
+        </div>
+    </div>
+    <div class="short-row">
+        <div class="col4">
+            <label for="d6-dice">d6s</label>
+        </div>
+        <div class="col4">
+            <input id="d6-dice" type="number" min="0" max = "100" />
+        </div>  
+        <div class="col4">
+            <button id="roll-d6">Roll</button>
+        </div>
+        <div class="col4">
+            <input id="d6-mod" type="number" placeholder="+/-0" />
+        </div>
+    </div>
+    <div class="short-row">
+        <div class="col4">
+            <label for="d8-dice">d8s</label>
+        </div>
+        <div class="col4">
+            <input id="d8-dice" type="number" min="0" max = "100" />
+        </div>
+        <div class="col4">
+            <button id="roll-d8">Roll</button>
+        </div>
+        <div class="col4">
+            <input id="d8-mod" type="number" placeholder="+/-0" />
+        </div>
+    </div>
+    <div class="short-row">
+        <div class="col4">
+            <label for="d10-dice">d10s</label>
+        </div>
+        <div class="col4">
+            <input id="d10-dice" type="number" min="0" max = "100" />
+        </div>
+        <div class="col4">
+            <button id="roll-d10">Roll</button>
+        </div>
+        <div class="col4">
+            <input id="d10-mod" type="number" placeholder="+/-0" />
+        </div>
+    </div>
+    <div class="short-row">
+        <div class="col4">
+            <label for="d12-dice">d12s</label>
+        </div>
+        <div class="col4">
+            <input id="d12-dice" type="number" min="0" max = "100" />
+        </div>
+        <div class="col4">
+            <button id="roll-d12">Roll</button>
+        </div>
+        <div class="col4">
+            <input id="d12-mod" type="number" placeholder="+/-0" />
+        </div>
+    </div>
+    <div class="short-row">
+        <div class="col4">
+            <label for="d20-dice">d20s</label>
+        </div>
+        <div class="col4">
+            <input id="d20-dice" type="number" min="0" max = "100" />
+        </div>
+        <div class="col4">
+            <button id="roll-d20">Roll</button>
+        </div>
+        <div class="col4">
+            <input id="d20-mod" type="number" placeholder="+/-0" />
+        </div>
+    </div>
+    <div class="short-row">
+        <div class="col4">
+            <label for="d100-dice">d%s</label>
+        </div>
+        <div class="col4">
+            <input id="d100-dice" type="number" min="0" max = "100" />
+        </div>
+        <div class="col4">
+            <button id="roll-d100">Roll</button>
+        </div>
+        <div class="col4">
+            <input id="d100-mod" type="number" placeholder="+/-0" />
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col2" style="width: 65%;">
+            <label for="result-report">Dice:</label>
+            <button id="roll-all">Roll All</button>
+            <div id="result-report" class="report-block">
+                <!-- Results go here -->
+            </div>
+        </div>  
+        <div class="col2" style="width: 30%;">
+            <br>
+            <div id="result-summary" class="report-block" style="width: 100%;">
+                <!-- Summary goes here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/DiceBag.js" type="text/javascript"></script>
+    <script src="assets/js/dBags.js" type="text/javascript"></script>
+</body>
+</html>
