@@ -70,7 +70,7 @@ The unmodified dice rolls are listed for each die type in the field on the left
 side. The modified total, high, and low results are listed in the summary field
 on the right side at the bottom.
 
-![Project Usage Image 0](assets/images/dbags_d20_ScreenShot.jpg)
+![Project Usage Image 0](assets/images/dBags_d20_ScreenShot.jpg)
 ![Project Usage Image 1](assets/images/dBags_d6s_ScreenShot.jpg)
 ![Project Usage Image 2](assets/images/dBags_dLotz_ScreenShot.jpg)
 
