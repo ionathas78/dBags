@@ -192,14 +192,20 @@ function handleClickRollAll() {
     }
 
     if (report != "") {
+        report += "<hr>-<hr>";
+        let newReportLine = document.createElement("p");
+        let newSummaryLine = document.createElement("p");
+    
         if (summary.indexOf("<br>") > -1) {
-            summary += "<hr>" + "Total: " + props.total + ". " + (!props.high ? "" : "High: " + props.high + ". Low: " + props.low + ".");
+            summary += "<hr>" + "Total: " + props.total + ". " + (!props.high ? "" : "High: " + props.high + ". Low: " + props.low + "." + "<hr>");
         }
-        _divReport.innerHTML = report;
-        _divSummary.innerHTML = summary;
-    } else {
-        _divReport.innerHTML = "";
-        _divSummary.innerHTML = "";
+
+        newReportLine.innerHTML = report;
+        newSummaryLine.innerHTML = summary;
+        _divReport.appendChild(newReportLine);
+        _divSummary.appendChild(newSummaryLine);
+        _divReport.scrollTo({top: _divReport.scrollHeight, behavior: "smooth"});
+        _divSummary.scrollTo({top: _divSummary.scrollHeight, behavior: "smooth"});
     }
 }
 
