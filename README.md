@@ -37,7 +37,7 @@ THEN I get a reasonable statistical spread of results, rather than a clump of hi
 
 
 ## Graphic
-![Project Image 0](assets/images/dbags_Main_ScreenShot.jpg)
+![Project Image 0](assets/images/dBags_Main_ScreenShot.jpg)
 
 ## Table of Contents
 * [Technologies](#Technologies)
@@ -70,7 +70,7 @@ The unmodified dice rolls are listed for each die type in the field on the left
 side. The modified total, high, and low results are listed in the summary field
 on the right side at the bottom.
 
-![Project Usage Image 0](assets/images/dbags_d20_ScreenShot.jpg)
+![Project Usage Image 0](assets/images/dBags_d20_ScreenShot.jpg)
 ![Project Usage Image 1](assets/images/dBags_d6s_ScreenShot.jpg)
 ![Project Usage Image 2](assets/images/dBags_dLotz_ScreenShot.jpg)
 
@@ -79,7 +79,8 @@ on the right side at the bottom.
 Done for Now
 
 ## FAQ
-Why not a simple pseudorandom number generator?\
+> Why not a simple pseudorandom number generator?
+
 For me, d20s consistently roll a 1 or a 20 about every 1 in 5 rolls. Some nights,
 it's about every 1 in 3 rolls. It sucks to be my players, let me tell you.
 As such, I tend to prefer statistical results to actual ones. Pseudorandom 
