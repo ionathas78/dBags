@@ -42,3 +42,7 @@ input {
     margin-top: 5px;
     overflow: auto;
 }
+
+.report-block p {
+    margin: 2px;
+}

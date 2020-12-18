@@ -106,8 +106,15 @@ function handleClickRoll(event) {
     }
     addDice(numberOfDice, diceFunction, results);
 
-    _divReport.innerHTML = targetDie + (diceInput.value < 2 ? "" : "s") + ": " + results.join(", ");
-    _divSummary.innerHTML = summaryTag(targetDie, diceMod.value, diceInput.value) + summarizeDice(results, diceMod, props);
+    let newReportLine = document.createElement("p");
+    let newSummaryLine = document.createElement("p");
+    newReportLine.textContent = targetDie + (diceInput.value < 2 ? "" : "s") + ": " + results.join(", ") + "\n";
+    newSummaryLine.textContent = summaryTag(targetDie, diceMod.value, diceInput.value) + summarizeDice(results, diceMod, props) + "\n";
+
+    _divReport.appendChild(newReportLine);
+    _divSummary.appendChild(newSummaryLine);
+    _divReport.scrollTo({top: _divReport.scrollHeight, behavior: "smooth"});
+    _divSummary.scrollTo({top: _divSummary.scrollHeight, behavior: "smooth"});
 }
 
 function handleClickRollAll() {
